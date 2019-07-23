@@ -25,6 +25,10 @@ export class FileAttachmentsVisualComponent {
 
   public allowLinks: boolean = true;
 
+  public required: boolean = false;
+
+  public showLabel: boolean = false;
+
   constructor() {
     this.filesToUpload = [];
     this.rejectedFiles = [];

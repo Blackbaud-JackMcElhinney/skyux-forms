@@ -5,7 +5,12 @@
       (linkChanged)="linkAdded($event)"
       [maxFileSize]="maxFileSize"
       [validateFn]="validateFile"
-      [allowLinks]="allowLinks">
+      [allowLinks]="allowLinks"
+      [required]="required">
+      <sky-file-drop-label
+        *ngIf="showLabel">
+        Field Label
+      </sky-file-drop-label>
     </sky-file-drop>
 
     <div *ngFor="let file of allItems">
@@ -19,4 +24,18 @@
   class="sky-btn sky-btn-primary sky-test-allow-links"
   (click)="allowLinks = !allowLinks">
   Toggle allowLinks
+</button>
+
+<button
+  type="button"
+  class="sky-btn sky-btn-primary sky-test-required"
+  (click)="required = !required">
+  Toggle required
+</button>
+
+<button
+  type="button"
+  class="sky-btn sky-btn-primary sky-test-label"
+  (click)="showLabel = !showLabel">
+  Toggle showLabel
 </button>
